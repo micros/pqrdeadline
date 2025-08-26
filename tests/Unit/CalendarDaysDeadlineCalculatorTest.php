@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Cmixin\BusinessDay;
 use Micrositios\PqrDeadline\Enums\RequestType;
 use Micrositios\PqrDeadline\Strategies\CalendarDaysDeadlineCalculator;
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use PHPUnit\Framework\TestCase;
 
 class CalendarDaysDeadlineCalculatorTest extends TestCase

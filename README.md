@@ -26,7 +26,7 @@ composer require micrositios/pqrdeadline
 ## Uso Básico
 
 ```php
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use Carbon\Carbon;
 
 // Crear PQR
@@ -98,7 +98,7 @@ vendor/bin/phpunit --testdox
 La forma más simple de usar la librería es con el método `DeadlineWrapper::setup()`:
 
 ```php
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use Carbon\Carbon;
 
 // Petición general (15 días hábiles)
@@ -115,7 +115,7 @@ $deadline = $wrapper->calculateDeadline();
 ### Forma Automática: Con Suspensiones
 
 ```php
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use Carbon\Carbon;
 
 // Petición general con suspensiones
@@ -141,7 +141,7 @@ $deadline = $wrapper->injectSuspensions($suspensions)->calculateDeadline();
 Para casos que requieren mayor control, pasa un array de parámetros a `DeadlineWrapper::setup()`:
 
 ```php
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use Carbon\Carbon;
 
 $params = [
@@ -158,7 +158,7 @@ $deadline = $wrapper->calculateDeadline();
 ### Forma Manual: Con Suspensiones
 
 ```php
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 use Carbon\Carbon;
 
 $params = [
@@ -237,8 +237,7 @@ src/
 │   ├── HoursDeadlineCalculator.php            # Horas
 │   ├── AppliesDynamicSuspensions.php          # Trait suspensiones
 │   └── StrategyFactory.php                    # Factory estrategias
-└── Support/
-    └── DeadlineWrapper.php            # Wrapper principal
+└── DeadlineWrapper.php                # Wrapper principal
 ```
 
 ## Contribuir
@@ -265,6 +264,12 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 
 ## Changelog
 
+### v0.2.1
+- Reestructuración: DeadlineWrapper movido a directorio raíz
+- Eliminación de carpeta Support innecesaria
+- Namespace simplificado: `Micrositios\PqrDeadline\DeadlineWrapper`
+- Actualización de todas las referencias en documentación y ejemplos
+
 ### v0.2.0
 - Limpieza y optimización del código base
 - Eliminación de clases no utilizadas (ErrorFactory, DomainException, validadores)
@@ -283,5 +288,5 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 ---
 
 **Mantenido por**: Micrositios
-**Versión**: 0.2.0
+**Versión**: 0.2.1
 **PHP**: >= 8.1

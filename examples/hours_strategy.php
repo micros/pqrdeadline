@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Carbon\Carbon;
-use Micrositios\PqrDeadline\Support\DeadlineWrapper;
+use Micrositios\PqrDeadline\DeadlineWrapper;
 
 echo "=== GUÍA DE USO: ESTRATEGIA DE HORAS ===\n\n";
 

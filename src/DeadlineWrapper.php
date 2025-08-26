@@ -1,6 +1,6 @@
 <?php
 
-namespace Micrositios\PqrDeadline\Support;
+namespace Micrositios\PqrDeadline;
 
 use Carbon\Carbon;
 use InvalidArgumentException;
