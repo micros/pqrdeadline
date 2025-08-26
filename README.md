@@ -242,7 +242,6 @@ src/
 │   └── StrategyFactory.php                    # Factory estrategias
 ├── Support/
 │   ├── DeadlineWrapper.php            # Wrapper principal
-│   ├── SuspensionNormalizer.php       # Normalización suspensiones
 │   └── SuspensionValidator.php        # Validación suspensiones
 └── Validation/
     └── InputValidator.php              # Validación de entrada
