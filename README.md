@@ -89,7 +89,7 @@ vendor/bin/phpunit
 vendor/bin/phpunit --testdox
 ```
 
-**Total**: 58 tests, 120 assertions cubriendo las 3 estrategias de cálculo.
+**Total**: 42 tests, 59 assertions cubriendo las 3 estrategias de cálculo.
 
 ## Ejemplos de Uso
 
@@ -231,20 +231,14 @@ src/
 │   └── DeadlineCalculator.php          # Interface principal
 ├── Enums/
 │   └── RequestType.php                 # Tipos de PQR
-├── Errors/
-│   ├── DomainException.php            # Excepciones del dominio
-│   └── ErrorFactory.php              # Factory de errores
 ├── Strategies/
 │   ├── BusinessDaysDeadlineCalculator.php     # Días hábiles
 │   ├── CalendarDaysDeadlineCalculator.php     # Días calendario
 │   ├── HoursDeadlineCalculator.php            # Horas
 │   ├── AppliesDynamicSuspensions.php          # Trait suspensiones
 │   └── StrategyFactory.php                    # Factory estrategias
-├── Support/
-│   ├── DeadlineWrapper.php            # Wrapper principal
-│   └── SuspensionValidator.php        # Validación suspensiones
-└── Validation/
-    └── InputValidator.php              # Validación de entrada
+└── Support/
+    └── DeadlineWrapper.php            # Wrapper principal
 ```
 
 ## Contribuir
@@ -271,16 +265,23 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 
 ## Changelog
 
+### v0.2.0
+- Limpieza y optimización del código base
+- Eliminación de clases no utilizadas (ErrorFactory, DomainException, validadores)
+- Simplificación de la arquitectura manteniendo funcionalidad completa
+- Actualización de documentación y ejemplos
+- 42 tests, 59 assertions con 100% de éxito
+
 ### v0.1.0
 - Implementación inicial con 3 estrategias de cálculo
 - 14 tipos de PQR predefinidos
 - Soporte para festivos colombianos
 - Manejo avanzado de suspensiones
-- Suite completa de tests (58 tests, 120 assertions)
+- Suite completa de tests
 - Documentación completa
 
 ---
 
 **Mantenido por**: Micrositios
-**Versión**: 0.1.0
+**Versión**: 0.2.0
 **PHP**: >= 8.1

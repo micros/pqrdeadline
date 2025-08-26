@@ -1,6 +1,6 @@
 # Tests
 
-Este proyecto utiliza PHPUnit para las pruebas automatizadas con una cobertura completa de **58 tests y 120 assertions**.
+Este proyecto utiliza PHPUnit para las pruebas automatizadas con una cobertura completa de **42 tests y 59 assertions**.
 
 ## Ejecutar Tests
 
@@ -14,9 +14,6 @@ Este proyecto utiliza PHPUnit para las pruebas automatizadas con una cobertura c
 # Solo tests unitarios
 ./vendor/bin/phpunit --testsuite=Unit
 
-# Solo tests de características/integración
-./vendor/bin/phpunit --testsuite=Feature
-
 # Test específico
 ./vendor/bin/phpunit tests/Unit/BusinessDaysDeadlineCalculatorTest.php
 
@@ -28,14 +25,11 @@ Este proyecto utiliza PHPUnit para las pruebas automatizadas con una cobertura c
 
 ```
 tests/
-├── Unit/                                      # Tests unitarios (58 tests)
+├── Unit/                                      # Tests unitarios (42 tests)
 │   ├── BusinessDaysDeadlineCalculatorTest.php # 16 tests - Estrategia días hábiles
 │   ├── CalendarDaysDeadlineCalculatorTest.php # 14 tests - Estrategia días calendario
-│   ├── HoursDeadlineCalculatorTest.php        # 12 tests - Estrategia horas
-│   ├── CarbonIntegrationTest.php              # 4 tests - Integración Carbon
-│   ├── ColombianHolidaysTest.php              # 7 tests - Festivos colombianos
-│   └── DummyTest.php                          # 5 tests - Verificaciones básicas
-└── Feature/                                   # Tests de integración (vacío)
+│   └── HoursDeadlineCalculatorTest.php        # 12 tests - Estrategia horas
+└── README.md                                  # Esta documentación
 ```
 
 ## Configuración
@@ -54,9 +48,6 @@ El proyecto usa PHPUnit 10.5+ con las siguientes configuraciones:
     <testsuites>
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
 </phpunit>
@@ -113,39 +104,6 @@ El proyecto usa PHPUnit 10.5+ con las siguientes configuraciones:
 - Salud Riesgo Priorizado (48h, duplicado = 96h)
 - Salud Riesgo Simple (72h, duplicado = 144h)
 
-### CarbonIntegrationTest (4 tests)
-**Verificación de integración con librerías externas**:
-
-#### Funcionalidades probadas:
-- Funcionalidad básica de Carbon
-- Extensión business-day disponible
-- Manipulación correcta de fechas
-- Comparaciones temporales precisas
-
-### ColombianHolidaysTest (7 tests)
-**Verificación específica de festivos colombianos**:
-
-#### Festivos nacionales validados en 3 años (2023-2025):
-- 25 de Diciembre (Navidad)
-- 1 de Enero (Año Nuevo)
-- 20 de Julio (Día de la Independencia)
-- 7 de Agosto (Batalla de Boyacá)
-- 1 de Mayo (Día del Trabajo)
-- 8 de Diciembre (Inmaculada Concepción)
-
-#### Validaciones adicionales:
-- Fines de semana no son días hábiles
-- Días laborales regulares son hábiles
-- BusinessDaysDeadlineCalculator maneja festivos correctamente
-- Cálculos complejos con secuencias de festivos
-
-### DummyTest (5 tests)
-**Verificaciones básicas del entorno**:
-- Assertions básicas de PHPUnit
-- Operaciones de strings y arrays
-- Verificación de versión PHP >= 8.1
-- Verificación de autoloading de clases principales
-
 ## Casos de Prueba Específicos
 
 ### Fechas de Referencia
@@ -200,18 +158,15 @@ Los tests utilizan fechas específicas para garantizar consistencia:
 
 ## Datos de Cobertura
 
-**Total**: 58 tests, 120 assertions
+**Total**: 42 tests, 59 assertions
 
 **Distribución por estrategia**:
-- Días hábiles: 16 tests (28%)
-- Días calendario: 14 tests (24%)  
-- Horas: 12 tests (21%)
-- Integración Carbon: 4 tests (7%)
-- Festivos colombianos: 7 tests (12%)
-- Framework básico: 5 tests (8%)
+- Días hábiles: 16 tests (38%)
+- Días calendario: 14 tests (33%)  
+- Horas: 12 tests (29%)
 
 **Estado**: Todos los tests pasan consistentemente ✅
-**Tiempo de ejecución**: ~ 113ms
+**Tiempo de ejecución**: ~ 77ms
 **Memoria utilizada**: ~ 12MB
 **Versión PHPUnit**: 10.5.53
 **Versión PHP**: 8.4.1
