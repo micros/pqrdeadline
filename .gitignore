@@ -1,0 +1,25 @@
+# Composer dependencies
+vendor/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PHPUnit/Testing
+.phpunit.cache/
+phpunit.xml.bak
+coverage/
+
+# Logs
+*.log
+
+# Build artifacts
+build/
+dist/
+
+# Composer lock (opcional, si la librería no lo requiere)
+composer.lock
