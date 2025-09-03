@@ -20,7 +20,8 @@ class BusinessDaysDeadlineCalculator implements DeadlineCalculator
      * - Se cuentan solo días hábiles, excluyendo sábados, domingos y festivos.
      * - Las suspensiones se procesan en orden cronológico y pueden aportar días hábiles completos.
      * - Se evaluan traslapos entre suspensiones y se excluyen periodos repetidos.
-     * - Si las horas hábiles del día inicial y final suman 8 o más, se contabiliza un día adicional.
+     * - Las horas hábiles son de 8AM a 5PM. Si suman 8 o más, se contabiliza un día adicional.
+     * - Solo se aplican suspensiones que inicien antes del deadline vigente.
      */
     public function calculate(array $params): Carbon
     {
@@ -57,9 +58,9 @@ class BusinessDaysDeadlineCalculator implements DeadlineCalculator
     }
 
     /**
-     * Aplica suspensiones dinámicamente al plazo de días hábiles.
-     * Cada suspensión se evalúa contra el plazo vigente en ese momento.
-     * Aplica validaciones estructurales avanzadas sobre el array de suspensiones.
+     * Calcula días hábiles aportados por suspensiones (8AM-5PM).
+     * Solo aplica suspensiones que inicien antes del deadline vigente.
+     * Suma días completos + horas convertidas (8h = 1 día).
      */
     private function applyDynamicSuspensions(Carbon $initialDeadline, array $suspensions, Carbon $createdAt): Carbon
     {
