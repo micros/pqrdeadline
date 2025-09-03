@@ -12,6 +12,13 @@ class CalendarDaysDeadlineCalculator implements DeadlineCalculator
 {
     use AppliesDynamicSuspensions;
 
+    /**
+     * Calcula el vencimiento de una PQR considerando días calendario consecutivos.
+     * - El plazo de vencimiento inicia el día siguiente a la radicación.
+     * - Se cuentan todos los días sin excepción (incluye fines de semana y festivos).
+     * - Las suspensiones se suman íntegramente como tiempo adicional al plazo.
+     * - Solo se aplican suspensiones que inicien antes del deadline vigente.
+     */
     public function calculate(array $params): Carbon
     {
         $createdAt = $params['created_at'] ?? null;

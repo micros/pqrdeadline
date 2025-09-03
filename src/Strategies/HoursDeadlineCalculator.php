@@ -12,6 +12,13 @@ class HoursDeadlineCalculator implements DeadlineCalculator
 {
     use AppliesDynamicSuspensions;
 
+    /**
+     * Calcula el vencimiento de una PQR considerando tiempo absoluto en horas.
+     * - El plazo de vencimiento inicia desde el momento exacto de la radicación.
+     * - Se cuenta tiempo continuo sin distinción de días hábiles, fines de semana o festivos.
+     * - Las suspensiones se suman íntegramente proporcionando máxima precisión temporal.
+     * - Solo se aplican suspensiones que inicien antes del deadline vigente.
+     */
     public function calculate(array $params): Carbon
     {
         $createdAt = $params['created_at'] ?? null;

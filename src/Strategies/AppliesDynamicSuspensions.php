@@ -4,12 +4,18 @@ namespace Micrositios\PqrDeadline\Strategies;
 
 use Carbon\Carbon;
 
+/**
+ * Suma tiempo de suspensiones al deadline de forma dinámica.
+ * Solo aplica suspensiones que inicien antes del deadline vigente.
+ * Procesa traslapes para evitar contar tiempo duplicado.
+ * Usado por CalendarDays y Hours. BusinessDays tiene lógica propia más compleja.
+ */
 trait AppliesDynamicSuspensions
 {
     /**
-     * Aplica suspensiones dinámicamente al plazo.
-     * Cada suspensión se evalúa contra el plazo vigente en ese momento.
-     * Aplica validaciones estructurales avanzadas sobre el array de suspensiones.
+     * Suma tiempo de suspensiones al deadline de forma dinámica.
+     * Solo aplica suspensiones que inicien antes del deadline vigente.
+     * Procesa traslapes para evitar contar tiempo duplicado.
      */
     protected function applyDynamicSuspensions(Carbon $initialDeadline, array $suspensions, Carbon $createdAt): Carbon
     {
