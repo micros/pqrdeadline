@@ -7,9 +7,12 @@ Biblioteca PHP para el cálculo simple de fechas de vencimiento de PQR (Peticion
 - Múltiples estrategias de cálculo: Días hábiles, días calendario y horas
 - Soporte para festivos colombianos: Integración con `cmixin/business-day`
 - Manejo de suspensiones: Cálculo dinámico con traslapes y validaciones
+- Identificadores únicos: Soporte opcional para ULID en suspensiones
 - Tipos de PQR predefinidos: 14 tipos según normativa colombiana
 - Duplicación de plazos: Soporte para segunda instancia
 - Validaciones robustas: Control de errores y casos edge
+- Documentación completa: Lógica de negocio detallada en código
+- Cobertura total: 42 tests, 59 assertions
 
 ## Instalación
 
@@ -264,6 +267,14 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 
 ## Changelog
 
+### v1.0.0 (2025-09-04) 🎉
+- **Release estable oficial**: Sistema completo de cálculo de deadlines para PQR
+- **Documentación de lógica de negocio**: Reglas específicas documentadas en todas las estrategias
+- **Identificadores únicos**: Soporte opcional para ULID en suspensiones
+- **Cobertura completa**: 42 tests, 59 assertions con 100% de éxito
+- **Arquitectura madura**: Tres estrategias consolidadas con manejo avanzado de traslapes
+- **Reglas de negocio claras**: BusinessDays (8AM-5PM, 8h=1día), CalendarDays (consecutivos), Hours (continuo)
+
 ### v0.2.1
 - Reestructuración: DeadlineWrapper movido a directorio raíz
 - Eliminación de carpeta Support innecesaria
@@ -288,5 +299,5 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 ---
 
 **Mantenido por**: Micrositios
-**Versión**: 0.2.1
+**Versión**: 1.0.0
 **PHP**: >= 8.1
