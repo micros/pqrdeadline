@@ -3,7 +3,7 @@
     "description": "Cálculo simple de fecha de vencimiento de PQR para Colombia",
     "type": "library",
     "license": "MIT",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "autoload": {
         "psr-4": {
             "Micrositios\\PqrDeadline\\": "src/"
