@@ -23,7 +23,7 @@ composer require micrositios/pqrdeadline
 ## Requisitos
 
 - PHP >= 8.1
-- nesbot/carbon ^2.72
+- nesbot/carbon ^3.0
 - cmixin/business-day ^1.16
 
 ## Uso Básico
@@ -267,6 +267,12 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 
 ## Changelog
 
+### v1.1.0 (2025-09-04) 📅
+- **Upgrade Carbon 3**: Actualización a nesbot/carbon ^3.0 para mejor rendimiento
+- **Compatibilidad mantenida**: Todos los tests siguen pasando (42 tests, 59 assertions)
+- **Dependencias actualizadas**: Symfony Clock 7.3 y polyfills actualizados
+- **API sin cambios**: Misma interfaz pública, solo mejoras internas
+
 ### v1.0.0 (2025-09-04) 🎉
 - **Release estable oficial**: Sistema completo de cálculo de deadlines para PQR
 - **Documentación de lógica de negocio**: Reglas específicas documentadas en todas las estrategias
@@ -299,5 +305,5 @@ MIT License. Ver archivo [LICENSE](LICENSE) para más detalles.
 ---
 
 **Mantenido por**: Micrositios
-**Versión**: 1.0.0
+**Versión**: 1.1.0
 **PHP**: >= 8.1
