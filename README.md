@@ -4,7 +4,7 @@ Librería PHP de Micrositios para calcular fechas máximas de respuesta de solic
 
 PHP puro, sin dependencia de Laravel, persistencia, datos personales ni conexiones de red durante el cálculo. Las fechas de entrada se copian a `CarbonImmutable`; los objetos de entrada y salida son inmutables.
 
-**Esta documentación corresponde a la nueva API destinada a 2.0.0, todavía sin publicar.** El paquete mantiene el nombre `micrositios/pqrdeadline` y el repositorio [micros/pqrdeadline](https://github.com/micros/pqrdeadline). Antes de publicar la etiqueta 2.0.0, la instalación habitual desde Packagist puede obtener la implementación 1.x, cuya API es diferente.
+**Esta documentación describe la API 2.x implementada en este repositorio.** El paquete mantiene el nombre `micrositios/pqrdeadline` y el repositorio [micros/pqrdeadline](https://github.com/micros/pqrdeadline). Para adaptar una integración con la API 1.x, consulta la [guía de migración](docs/migracion.md).
 
 ## Información disponible en este repositorio
 
@@ -33,7 +33,7 @@ Composer instala las dependencias transitivas y comprueba sus requisitos. PHPUni
 
 ## Instalación
 
-### Usar esta implementación antes de publicarla
+### Instalación local
 
 Sitúa las carpetas `deadline/` y `aplicacion/` una junto a la otra. Guarda este `composer.json` en `aplicacion/`; si la carpeta de la librería tiene otro nombre, ajusta `url`.
 
@@ -66,7 +66,7 @@ composer check-platform-reqs
 
 `dev-local` identifica exclusivamente esta instalación de ensayo. `symlink=false` instala una copia del paquete. Véase la [documentación de repositorios locales de Composer](https://getcomposer.org/doc/05-repositories.md#path).
 
-### Después de publicar 2.0.0
+### Instalación desde Packagist
 
 En la aplicación consumidora:
 
@@ -74,7 +74,7 @@ En la aplicación consumidora:
 composer require micrositios/pqrdeadline:^2.0
 ```
 
-Este comando requiere que 2.0.0 ya exista en Packagist. La [guía de migración](docs/migracion.md) explica los cambios desde 1.x.
+Este comando requiere una versión 2.x publicada en Packagist. Si aún no está disponible, utiliza la instalación local anterior. La [guía de migración](docs/migracion.md) explica los cambios desde 1.x.
 
 ## Inicio rápido: cálculo por tipo
 

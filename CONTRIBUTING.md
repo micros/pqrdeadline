@@ -6,7 +6,7 @@ Usa PHP `^8.4`, la extensión `calendar` y Composer. Desde la raíz de la librer
 
 ```bash
 composer install
-composer validate --strict
+composer validate --strict --no-check-version
 composer check-platform-reqs
 composer test
 php examples/uso.php
@@ -82,6 +82,8 @@ Mantén los ejemplos completos del README dentro de los marcadores `ejemplo-ejec
 
 ## Versiones y publicación
 
-Conserva el nombre `micrositios/pqrdeadline` y omite `version` en `composer.json`: Packagist obtiene la versión de las etiquetas Git. Los cambios incompatibles corresponden a una versión mayor, como la 2.0.0 prevista. Actualiza el changelog, verifica las pruebas del commit que se etiquetará y conserva las etiquetas publicadas; una corrección posterior utiliza una etiqueta nueva. La [guía de Packagist](https://packagist.org/about#managing-package-versions) explica el versionado y la sincronización con GitHub.
+Conserva el nombre `micrositios/pqrdeadline` y declara expresamente `version` en `composer.json`. Su valor debe coincidir con la etiqueta de publicación: `"version": "2.0.0"` corresponde a `v2.0.0`. Los cambios incompatibles requieren una versión mayor. Actualiza conjuntamente la versión y el changelog, verifica las pruebas del commit que se etiquetará y conserva las etiquetas publicadas; una corrección posterior utiliza una etiqueta nueva. La [guía de Packagist](https://packagist.org/about#managing-package-versions) explica el versionado y la sincronización con GitHub.
+
+La validación utiliza `--strict --no-check-version` para aceptar esta decisión explícita. Solo se omite la advertencia sobre la presencia del campo `version`; los demás controles de validación se mantienen.
 
 Durante la publicación se comprobará la sincronización del paquete existente con GitHub y se verificará la versión indexada. El workflow de pruebas no necesita un token de Packagist ni publica automáticamente. El reemplazo y su único commit siguen el procedimiento acordado en la guía de migración.

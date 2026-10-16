@@ -2,11 +2,20 @@
     "name": "micrositios/pqrdeadline",
     "description": "Librería PHP para calcular plazos de solicitudes PQR",
     "type": "library",
-    "keywords": ["pqr", "pqrs", "deadlines", "colombia", "business-days"],
+    "keywords": [
+        "pqr",
+        "pqrs",
+        "deadlines",
+        "colombia",
+        "business-days"
+    ],
     "homepage": "https://github.com/micros/pqrdeadline",
     "license": "MIT",
+    "version": "2.0.0",
     "authors": [
-        {"name": "Leonardo Forero Sandoval"}
+        {
+            "name": "Leonardo Forero Sandoval"
+        }
     ],
     "support": {
         "issues": "https://github.com/micros/pqrdeadline/issues",
