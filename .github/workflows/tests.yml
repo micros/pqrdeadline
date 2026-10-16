@@ -1,0 +1,51 @@
+name: Pruebas PHP
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: '8.4'
+            dependencies: latest
+            options: ''
+          - php: '8.5'
+            dependencies: latest
+            options: ''
+          - php: '8.4'
+            dependencies: lowest
+            options: '--prefer-lowest --prefer-stable'
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Preparar PHP y Composer
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: calendar, dom, mbstring, xml, xmlwriter
+          coverage: none
+          tools: composer:2
+      - name: Validar el paquete
+        run: composer validate --strict
+      - name: Resolver e instalar dependencias
+        run: composer update --prefer-dist --no-interaction --no-progress --no-plugins --no-scripts ${{ matrix.options }}
+      - name: Verificar la plataforma y el autoload
+        run: |
+          composer check-platform-reqs
+          composer dump-autoload --optimize --strict-psr
+      - name: Ejecutar las pruebas
+        run: composer test
