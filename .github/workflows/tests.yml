@@ -40,7 +40,7 @@ jobs:
           coverage: none
           tools: composer:2
       - name: Validar el paquete
-        run: composer validate --strict --no-check-version
+        run: composer validate --strict
       - name: Resolver e instalar dependencias
         run: composer update --prefer-dist --no-interaction --no-progress --no-plugins --no-scripts ${{ matrix.options }}
       - name: Verificar la plataforma y el autoload

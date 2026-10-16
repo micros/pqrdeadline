@@ -102,10 +102,10 @@ Salida: `2026-11-10T23:59:59.999999-05:00`. El cálculo es nuevo en cada llamada
 
 ## Publicación e historial
 
-El reemplazo previsto conservará el repositorio Git de destino y sus etiquetas anteriores. Un único commit incorporará la nueva implementación y eliminará los archivos obsoletos; la etiqueta `v2.0.0` señalará ese commit. No se importa el historial del repositorio de desarrollo ni se conserva código antiguo en una subcarpeta del paquete nuevo.
+El reemplazo conservó el repositorio Git de destino y sus etiquetas anteriores. Un único commit incorporó la nueva implementación y eliminó los archivos obsoletos; los ajustes posteriores preparan la versión identificada por la etiqueta `2.0.0`. No se importó el historial del repositorio de desarrollo ni se conserva código antiguo en una subcarpeta del paquete nuevo.
 
 Packagist seguirá indexando el mismo paquete. Una restricción `^1.1` no selecciona 2.0.0; restricciones abiertas o una rama de desarrollo pueden seleccionar otro contenido. Consulta [versiones de Composer](https://getcomposer.org/doc/articles/versions.md) y [versionado en Packagist](https://packagist.org/about#managing-package-versions). Las etiquetas [v1.1.0](https://github.com/micros/pqrdeadline/tree/v1.1.0) y [v1.0.0](https://github.com/micros/pqrdeadline/tree/v1.0.0) conservan las versiones anteriores.
 
-La instalación y el reemplazo se ensayan antes de publicar. Esta guía documenta el procedimiento previsto y no afirma que el reemplazo o la publicación ya se hayan realizado.
+La instalación y el reemplazo ya se verificaron. La disponibilidad en Packagist se comprueba después de enviar la etiqueta `2.0.0` a GitHub y sincronizar el paquete.
 
 [Volver al índice](README.md)
